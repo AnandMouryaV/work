@@ -13,8 +13,8 @@ public class CurrencyConversionBean {
 	@GeneratedValue
 	private long currencyId;
 	
-	private String fromCurrency;
-	private String toCurrency;
+	private String from;
+	private String to;
 	private BigDecimal conversionMultiple;
 	public CurrencyConversionBean() {
 		super();
@@ -24,8 +24,8 @@ public class CurrencyConversionBean {
 			BigDecimal conversionMultiple) {
 		super();
 		this.currencyId = currencyId;
-		this.fromCurrency = fromCurrency;
-		this.toCurrency = toCurrency;
+		this.from = fromCurrency;
+		this.to = toCurrency;
 		this.conversionMultiple = conversionMultiple;
 	}
 	public long getCurrencyId() {
@@ -35,16 +35,16 @@ public class CurrencyConversionBean {
 		this.currencyId = currencyId;
 	}
 	public String getFromCurrency() {
-		return fromCurrency;
+		return from;
 	}
 	public void setFromCurrency(String fromCurrency) {
-		this.fromCurrency = fromCurrency;
+		this.from = fromCurrency;
 	}
 	public String getToCurrency() {
-		return toCurrency;
+		return to;
 	}
 	public void setToCurrency(String toCurrency) {
-		this.toCurrency = toCurrency;
+		this.to = toCurrency;
 	}
 	public BigDecimal getConversionMultiple() {
 		return conversionMultiple;

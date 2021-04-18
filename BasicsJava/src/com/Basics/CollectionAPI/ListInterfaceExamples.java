@@ -21,16 +21,10 @@ public class ListInterfaceExamples {
 	 students.add("rahim");
 	 students.add("ravi");
 	 
-	 Iterator<String> s = students.iterator();
+	String s= students.remove(0);
+	
+	System.out.println("the value in is : "+s);
 	 
-	 while(s.hasNext()) {
-			String k=s.next();
-	if(k.equalsIgnoreCase("rahim")) {
-		s.remove();
-		
-	}
-		
-	}
-	 System.out.println(students.size());
+	 
 }
 }

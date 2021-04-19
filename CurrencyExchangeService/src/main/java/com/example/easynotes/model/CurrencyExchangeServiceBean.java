@@ -22,6 +22,7 @@ public class CurrencyExchangeServiceBean {
 	private String fromCurrency;
 	private String toCurrency;
 	private BigDecimal coversionMultiple;
+	private int port;
 
 	public CurrencyExchangeServiceBean(int conversionid, String fromCurrency, String toCurrency,
 			BigDecimal coversionMultiple) {
@@ -73,5 +74,15 @@ public class CurrencyExchangeServiceBean {
 		return "CurrencyExchangeServiceBean [conversionid=" + conversionid + ", fromCurrency=" + fromCurrency
 				+ ", toCurrency=" + toCurrency + ", coversionMultiple=" + coversionMultiple + "]";
 	}
+
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
+	}
+	
+	
 
 }

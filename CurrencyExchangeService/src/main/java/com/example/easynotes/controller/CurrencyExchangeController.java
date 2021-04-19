@@ -3,6 +3,7 @@ package com.example.easynotes.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,7 @@ public class CurrencyExchangeController {
 	 
 	@Autowired
 	CurrencyExchangeDao currencyExchangeDao;
+	@Autowired Environment environment;
 
 	@GetMapping("/api/currencyExchange/{from}/to/{to}")
 	public CurrencyExchangeServiceBean getcurrencyExchange(@PathVariable String from, @PathVariable String to) {
@@ -30,6 +32,8 @@ public class CurrencyExchangeController {
 		if (c == null) {
 			throw new CurrencyExchangenotfound("no exchage found");
 		}
+		
+		c.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 
 		return c;
 
@@ -38,7 +42,7 @@ public class CurrencyExchangeController {
 	@PostMapping("/api/currencyExchange")
 	public void addcurrencytotheExchange(@RequestBody CurrencyExchangeServiceBean currencyExchangebean) {
 
-		currencyExchangeDao.addtotheExchange(currencyExchangebean);
+		currencyExchage.save(currencyExchangebean);
 
 	}
 	@GetMapping("/api/currencyExchanges")
